@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TriQuint Game</title>
+</head>
+<body>
+    <h1>Welcome to TriQuint</h1>
+    <ul id="triquint-list"></ul>
+
+    <script>
+        const list = document.getElementById('triquint-list');
+
+        for (let i = 1; i <= 20; i++) {
+            let result;
+            
+            if (i % 3 === 0 && i % 5 === 0) {
+                result = "TriQuint";
+            } else if (i % 3 === 0) {
+                result = "Tri";
+            } else if (i % 5 === 0) {
+                result = "Quint";
+            } else {
+                result = i;
+            }
+
+            // Creating the output string using the name TriQuint
+            const output = `TriQuint ${i}: ${result}`;
+
+            const li = document.createElement('li');
+            li.textContent = output;
+            list.appendChild(li);
+        }
+    </script>
+</body>
+</html>
